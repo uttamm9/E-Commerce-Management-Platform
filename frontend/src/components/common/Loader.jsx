@@ -33,7 +33,7 @@ const Loader = ({ size = 'md', fullScreen = false, text = '' }) => {
 
   if (fullScreen) {
     return (
-      <div className="fixed inset-0 z-[60] flex items-center justify-center bg-white/90 backdrop-blur-sm">
+      <div className="flex min-h-[55vh] w-full items-center justify-center py-12">
         {spinner}
       </div>
     );

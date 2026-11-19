@@ -37,7 +37,7 @@ const Home = () => {
   }, []);
 
   if (loading) {
-    return <Loader size="lg" text="Curating the storefront..." fullScreen={false} />;
+    return <Loader size="lg" text="Curating the storefront..." fullScreen />;
   }
 
   return (
