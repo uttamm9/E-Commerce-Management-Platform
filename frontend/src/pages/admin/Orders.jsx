@@ -205,7 +205,9 @@ const Orders = () => {
 
       {/* Orders Table */}
       {loading && allOrders.length === 0 ? (
-        <Loader fullScreen text="Loading system orders..." />
+        <div className="min-h-[420px] rounded-3xl border border-gray-100 bg-white shadow-xs flex items-center justify-center">
+          <Loader size="lg" text="Loading system orders..." />
+        </div>
       ) : (
         <>
           <OrderTable

@@ -157,7 +157,9 @@ const Products = () => {
 
       {/* Products Table */}
       {loading && products.length === 0 ? (
-        <Loader fullScreen text="Loading products catalog..." />
+        <div className="min-h-[420px] rounded-3xl border border-gray-100 bg-white shadow-xs flex items-center justify-center">
+          <Loader size="lg" text="Loading products catalog..." />
+        </div>
       ) : products.length === 0 ? (
         <div className="py-16 text-center bg-white rounded-3xl border border-gray-100 space-y-3">
           <Package className="w-10 h-10 text-gray-400 mx-auto" />

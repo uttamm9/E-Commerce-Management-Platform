@@ -10,17 +10,30 @@ const Loader = ({ size = 'md', fullScreen = false, text = '' }) => {
   };
 
   const spinner = (
-    <div className="flex flex-col items-center justify-center p-4">
-      <Loader2
-        className={`${sizeMap[size] || sizeMap.md} animate-spin text-indigo-600`}
-      />
-      {text && <p className="mt-2 text-sm text-gray-500 font-medium">{text}</p>}
+    <div
+      className="flex flex-col items-center justify-center gap-3"
+      role="status"
+      aria-live="polite"
+      aria-label={text || 'Loading'}
+    >
+      <div className="relative flex items-center justify-center rounded-full bg-indigo-50 ring-8 ring-indigo-50/40">
+        <Loader2
+          aria-hidden="true"
+          className={`${sizeMap[size] || sizeMap.md} animate-spin text-indigo-600`}
+          strokeWidth={2}
+        />
+      </div>
+      {text && (
+        <p className="text-sm font-medium tracking-wide text-gray-500">
+          {text}
+        </p>
+      )}
     </div>
   );
 
   if (fullScreen) {
     return (
-      <div className="fixed inset-0 z-50 flex items-center justify-center bg-white/80 backdrop-blur-sm">
+      <div className="fixed inset-0 z-[60] flex items-center justify-center bg-white/90 backdrop-blur-sm">
         {spinner}
       </div>
     );

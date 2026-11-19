@@ -157,7 +157,9 @@ const Customers = () => {
 
       {/* Customers Table */}
       {loading && customers.length === 0 ? (
-        <Loader fullScreen text="Loading registered customers..." />
+        <div className="min-h-[420px] rounded-3xl border border-gray-100 bg-white shadow-xs flex items-center justify-center">
+          <Loader size="lg" text="Loading registered customers..." />
+        </div>
       ) : customers.length === 0 ? (
         <div className="py-16 text-center bg-white rounded-3xl border border-gray-100 space-y-3">
           <Users className="w-10 h-10 text-gray-400 mx-auto" />

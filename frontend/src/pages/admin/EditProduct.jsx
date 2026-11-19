@@ -65,7 +65,11 @@ const EditProduct = () => {
   };
 
   if (loading) {
-    return <Loader fullScreen text="Loading product details..." />;
+    return (
+      <div className="min-h-[420px] rounded-3xl border border-gray-100 bg-white shadow-xs flex items-center justify-center">
+        <Loader size="lg" text="Loading product details..." />
+      </div>
+    );
   }
 
   return (

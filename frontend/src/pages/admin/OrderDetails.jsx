@@ -93,7 +93,11 @@ const OrderDetails = () => {
   };
 
   if (loading) {
-    return <Loader fullScreen text="Loading order audit records..." />;
+    return (
+      <div className="min-h-[420px] rounded-3xl border border-gray-100 bg-white shadow-xs flex items-center justify-center">
+        <Loader size="lg" text="Loading order audit records..." />
+      </div>
+    );
   }
 
   if (!order) {

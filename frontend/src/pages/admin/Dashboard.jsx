@@ -48,7 +48,11 @@ const Dashboard = () => {
   }, [period]);
 
   if (loading && !stats) {
-    return <Loader fullScreen text="Compiling admin sales analytics..." />;
+    return (
+      <div className="min-h-[420px] rounded-3xl border border-gray-100 bg-white shadow-xs flex items-center justify-center">
+        <Loader size="lg" text="Compiling admin sales analytics..." />
+      </div>
+    );
   }
 
   const customers = stats?.customers || {};
